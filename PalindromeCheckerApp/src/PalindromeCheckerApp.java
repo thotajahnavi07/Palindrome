@@ -4,15 +4,21 @@ public class PalindromeCheckerApp {
     */
     public static void main(String[] args) {
         String input = "madam";
-        boolean isPalindrome = true;
 
-        for (int i = 0; i < input.length() / 2; i++) {
-            if (input.charAt(i) != input.charAt(input.length() - 1 - i)) {
-                isPalindrome = false;
-                break;
-            }
+        // Initialize reversed string
+        String reversed = "";
+
+        // Iterate from the last character to the first
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed += input.charAt(i); // Build reversed string
         }
 
-        System.out.println(isPalindrome);
+        // Compare original and reversed strings
+        boolean isPalindrome = input.equals(reversed);
+
+        // Display results
+        System.out.println("Input text: " + input);
+        System.out.println("Reversed text: " + reversed);
+        System.out.println("Is it a Palindrome? " + isPalindrome);
     }
 }
